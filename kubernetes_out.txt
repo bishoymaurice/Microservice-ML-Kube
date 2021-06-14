@@ -1,0 +1,35 @@
+[ec2-user@ip-172-31-25-194 microservices-ml-kubernetes]$ sh ./run_kubernetes.sh
+pod/mymlapp-con1 created
+NAME           READY   STATUS              RESTARTS   AGE
+mymlapp-con1   0/1     ContainerCreating   0          1s
+error: unable to forward port because pod is not running. Current status=Pending
+[ec2-user@ip-172-31-25-194 microservices-ml-kubernetes]$ kubectl get pods
+NAME           READY   STATUS    RESTARTS   AGE
+mymlapp-con1   1/1     Running   0          10s
+[ec2-user@ip-172-31-25-194 microservices-ml-kubernetes]$ kubectl get pods
+NAME           READY   STATUS    RESTARTS   AGE
+mymlapp-con1   1/1     Running   0          11s
+[ec2-user@ip-172-31-25-194 microservices-ml-kubernetes]$ kubectl get pods
+NAME           READY   STATUS    RESTARTS   AGE
+mymlapp-con1   1/1     Running   0          13s
+[ec2-user@ip-172-31-25-194 microservices-ml-kubernetes]$ kubectl get pods
+NAME           READY   STATUS    RESTARTS   AGE
+mymlapp-con1   1/1     Running   0          14s
+[ec2-user@ip-172-31-25-194 microservices-ml-kubernetes]$ sh ./run_kubernetes.sh
+Error from server (AlreadyExists): pods "mymlapp-con1" already exists
+NAME           READY   STATUS    RESTARTS   AGE
+mymlapp-con1   1/1     Running   0          17s
+Forwarding from 127.0.0.1:8000 -> 80
+Forwarding from [::1]:8000 -> 80
+Handling connection for 8000
+^C[ec2-user@ip-172-31-25-194 microservices-ml-kubernetes]$ sh ./run_kubernetes.sh
+Error from server (AlreadyExists): pods "mymlapp-con1" already exists
+NAME           READY   STATUS    RESTARTS   AGE
+mymlapp-con1   1/1     Running   0          3m13s
+Forwarding from 127.0.0.1:8000 -> 80
+Forwarding from [::1]:8000 -> 80
+Handling connection for 8000
+Handling connection for 8000
+Handling connection for 8000
+Handling connection for 8000
+Handling connection for 8000
