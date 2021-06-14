@@ -3,41 +3,50 @@
 
 ## Project Overview
 
-In this project, you will apply the skills you have acquired in this course to operationalize a Machine Learning Microservice API. 
+The aim of this project is to learn about microservices design and technologies using docker and kubernetes for a sample python app, which has a ML algorithms that aims to get medv variable Housing Values in Suburbs of Boston (based on compition has been held recently by Kaggle team).
 
-You are given a pre-trained, `sklearn` model that has been trained to predict housing prices in Boston according to several features, such as average rooms in a home and data about highway access, teacher-to-pupil ratios, and so on. You can read more about the data, which was initially taken from Kaggle, on [the data source site](https://www.kaggle.com/c/boston-housing). This project tests your ability to operationalize a Python flask app—in a provided file, `app.py`—that serves out predictions (inference) about housing prices through API calls. This project could be extended to any pre-trained machine learning model, such as those for image recognition and data labeling.
+### How to
 
-### Project Tasks
+## Run the app locally
 
-Your project goal is to operationalize this working, machine learning microservice using [kubernetes](https://kubernetes.io/), which is an open-source system for automating the management of containerized applications. In this project you will:
-* Test your project code using linting
-* Complete a Dockerfile to containerize this application
-* Deploy your containerized application using Docker and make a prediction
-* Improve the log statements in the source code for this application
-* Configure Kubernetes and create a Kubernetes cluster
-* Deploy a container using Kubernetes and make a prediction
-* Upload a complete Github repo with CircleCI to indicate that your code has been tested
 
-You can find a detailed [project rubric, here](https://review.udacity.com/#!/rubrics/2576/view).
+```
+python app.py
+```
 
-**The final implementation of the project will showcase your abilities to operationalize production microservices.**
+app.py is the python application file
 
----
+## Run the app using docker
 
-## Setup the Environment
 
-* Create a virtualenv and activate it
-* Run `make install` to install the necessary dependencies
+```
+run_docker.sh
+```
 
-### Running `app.py`
 
-1. Standalone:  `python app.py`
-2. Run in Docker:  `./run_docker.sh`
-3. Run in Kubernetes:  `./run_kubernetes.sh`
+This file contains commands that are used to build docker image from Dockerfile and push it to docker hub, so make sure you're logged into your account before running this script.
+Dockerfile contains the base image of python in addition to installation of needed libraries.
+requirements.txt contains all needed python libraries to run the app, which are installed while building docker image.
 
-### Kubernetes Steps
 
-* Setup and Configure Docker locally
-* Setup and Configure Kubernetes locally
-* Create Flask app in Container
-* Run via kubectl
+## Run the app using kubernetes
+
+
+```
+run_kubernetes.sh
+```
+
+
+This file contains the commands needed to pull the same image pushed in the previous step into your account and run it on kubernetes cluster this time.
+
+
+### The app is now running on port 8000, which has been exposed using either docker to kubernetes according to your choice, please follow below steps to learn how to try it
+
+## To make a prediction run below script
+
+
+```
+make_prediction.sh
+```
+
+This is file will send sample request to the app running and print the output.
