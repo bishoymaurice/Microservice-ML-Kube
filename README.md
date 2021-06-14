@@ -1,4 +1,5 @@
-<include a CircleCI status badge, here>
+[![ML-Microservices-App](https://circleci.com/gh/bishoymaurice/microservices-ml-kubernetes/tree/main.svg?style=svg)]
+(https://circleci.com/gh/bishoymaurice/microservices-ml-kubernetes/tree/main)
 
 ## Project Overview
 
